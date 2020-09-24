@@ -21,7 +21,7 @@ class User:
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
     msg = bot.reply_to(message, """\
-Привет, это бот, который присылает негатив. Введите свою кодовую фразу.
+Привет, это бот, который присылает упоминания о вас. Введите свою кодовую фразу.
 """)
     bot.register_next_step_handler(msg, process_name_step)
 
@@ -68,7 +68,8 @@ def process_name_step(message):
             file = "./duplij.xlsx"
             user.file = file
             user = user_dict[chat_id]
-            
+       
+
     except Exception as e:
         bot.reply_to(message, 'oooops')
 
