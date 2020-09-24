@@ -64,7 +64,7 @@ def process_name_step(message):
             print('User chat id : ' , chat_id)
             print('User user_id : ' , user_id)
             bot.send_message(chat_id , 'Здравствуйте, выберите, что вас интересует', reply_markup=markup_for_menu)
-            bot.send_message(308984767, f'name: {name_user} зашел chat_id{chat_id} user_id{user_id}')
+            bot.send_message(308984767, f'name: {name_user} зашел chat_id: {chat_id} user_id: {user_id}')
             file = "./duplij.xlsx"
             user.file = file
             user = user_dict[chat_id]
@@ -90,17 +90,19 @@ def facebook(message):
         site = ws[f'A{i}'].value
         bot.send_message(message.chat.id, site)
             
-@bot.message_handler(regexp="Youtube")
+@bot.message_handler(regexp="Связаться с менеджером")
 def youtube(message):
     chat_id = message.chat.id
-    user = user_dict[chat_id] 
-    print("File", user.file)
-    wb = openpyxl.load_workbook(user.file)
-    ws = wb.active
-    for i in range(2, len(ws['B'])+1):
+    password = message.text
+    user = User(password)
+    user_dict[chat_id] = user
+    user.password = password
     
-        site = ws[f'B{i}'].value
-        bot.send_message(message.chat.id, site)
+    name_user=message.from_user.first_name
+    user_id=message.from_user.id
+    user_name = message.from_user.username
+    bot.send_message(chat_id , 'Здравствуйте, с вами соеденится @Pkovalov636. Если он долго не отвечает, то можете написать ему.', reply_markup=markup_for_menu)
+    bot.send_message(449120028, f'name: {name_user} зашел username: {user_name} просит соеденится')
 
 @bot.message_handler(regexp="На других сервисах")
 def na_drugin(message):
