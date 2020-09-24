@@ -83,7 +83,6 @@ def facebook(message):
     chat_id = message.chat.id
     password = message.text
     user = user_dict[chat_id] 
-    g = message.text
     print("File", user.file)
     wb = openpyxl.load_workbook(user.file)
     ws = wb.active
@@ -97,7 +96,6 @@ def youtube(message):
     chat_id = message.chat.id
     password = message.text
     user = user_dict[chat_id] 
-    g = message.text
     print("File", user.file)
     wb = openpyxl.load_workbook(user.file)
     ws = wb.active
@@ -111,7 +109,7 @@ def na_drugin(message):
     chat_id = message.chat.id
     password = message.text
     user = user_dict[chat_id] 
-    g = message.text
+    
     print("File", user.file)
     wb = openpyxl.load_workbook(user.file)
     ws = wb.active
