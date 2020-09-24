@@ -34,26 +34,27 @@ def process_name_step(message):
     
     name_user=message.from_user.first_name
     user_id=message.from_user.id
-    user_name_dog = message.from_user.username
     try:
         if user.password == "pishnyij":
+            user = user_dict[chat_id]
             bot.send_message(chat_id , 'Здравствуйте, выберите, что вас интересует', reply_markup=markup_for_menu)
             file = "./pishnyij.xlsx"
-            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
-            bot.send_message(247834086, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
+            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id}')
+            
             user.file = file
-            user = user_dict[chat_id]
+            
             print('User name client : ' , name_user)
             print('User chat id : ' , chat_id)
             print('User user_id : ' , user_id)
             
         if user.password == "churilo":
+            user = user_dict[chat_id]
             bot.send_message(chat_id , 'Здравствуйте, выберите, что вас интересует', reply_markup=markup_for_menu)
-            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
-            bot.send_message(247834086, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
+            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} ')
+            
             file = "./churilo.xlsx"
             user.file = file
-            user = user_dict[chat_id]
+            
             
             print('User name client : ' , name_user)
             print('User chat id : ' , chat_id)
@@ -62,16 +63,16 @@ def process_name_step(message):
             
         
         if user.password == "duplij":
-            
+            user = user_dict[chat_id]
             print('User name client : ' , name_user)
             print('User chat id : ' , chat_id)
             print('User user_id : ' , user_id)
             bot.send_message(chat_id , 'Здравствуйте, выберите, что вас интересует', reply_markup=markup_for_menu)
-            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
-            bot.send_message(247834086, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
+            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id}')
+            
             file = "./duplij.xlsx"
             user.file = file
-            user = user_dict[chat_id]
+            
        
 
     except Exception as e:
