@@ -34,11 +34,13 @@ def process_name_step(message):
     
     name_user=message.from_user.first_name
     user_id=message.from_user.id
+    user_name_dog = message.from_user.username
     try:
         if user.password == "pishnyij":
             bot.send_message(chat_id , 'Здравствуйте, выберите, что вас интересует', reply_markup=markup_for_menu)
             file = "./pishnyij.xlsx"
-            bot.send_message(308984767, f'name: {name_user} зашел chat_id{chat_id} user_id{user_id}')
+            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
+            bot.send_message(247834086, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
             user.file = file
             user = user_dict[chat_id]
             print('User name client : ' , name_user)
@@ -47,7 +49,8 @@ def process_name_step(message):
             
         if user.password == "churilo":
             bot.send_message(chat_id , 'Здравствуйте, выберите, что вас интересует', reply_markup=markup_for_menu)
-            bot.send_message(308984767, f'name: {name_user} зашел chat_id{chat_id} user_id{user_id}')
+            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
+            bot.send_message(247834086, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
             file = "./churilo.xlsx"
             user.file = file
             user = user_dict[chat_id]
@@ -64,7 +67,8 @@ def process_name_step(message):
             print('User chat id : ' , chat_id)
             print('User user_id : ' , user_id)
             bot.send_message(chat_id , 'Здравствуйте, выберите, что вас интересует', reply_markup=markup_for_menu)
-            bot.send_message(308984767, f'name: {name_user} зашел chat_id: {chat_id} user_id: {user_id}')
+            bot.send_message(308984767, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
+            bot.send_message(247834086, f'name: {name_user} зашел chat_id {chat_id} user_id {user_id} username: {user_name_dog}')
             file = "./duplij.xlsx"
             user.file = file
             user = user_dict[chat_id]
@@ -98,9 +102,9 @@ def youtube(message):
     
     name_user=message.from_user.first_name
     user_id=message.from_user.id
-    user_name = message.from_user.username
+    user_name_dog = message.from_user.username
     bot.send_message(chat_id , 'Здравствуйте, с вами соеденится @Pkovalov636. Если он долго не отвечает, то можете написать ему.', reply_markup=markup_for_menu)
-    bot.send_message(449120028, f'name: {name_user} зашел username: {user_name} просит соеденится')
+    bot.send_message(449120028, f'name: {name_user} зашел username: {user_name_dog} просит соеденится')
 
 @bot.message_handler(regexp="На других сервисах")
 def na_drugin(message):
