@@ -116,7 +116,7 @@ def na_drugin(message):
         bot.send_message(message.chat.id, site)
     
 
-@bot.message_handler(regexp="Давние")
+@bot.message_handler(regexp="Вчера")
 def davnije(message):
     chat_id = message.chat.id
     user = user_dict[chat_id] 
@@ -131,7 +131,7 @@ def davnije(message):
 
 
 
-@bot.message_handler(regexp="Вчера")
+@bot.message_handler(regexp="Сегодня")
 def vchera(message):
     chat_id = message.chat.id
     user = user_dict[chat_id] 
