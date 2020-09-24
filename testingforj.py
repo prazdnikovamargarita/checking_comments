@@ -18,8 +18,7 @@ class User:
 
 
 # Handle '/start' and '/help'
-@bot.message_handler(commands=['help', 'start'], regexp='/start')
-@bot.message_handler(regexp='/start')
+@bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
     msg = bot.reply_to(message, """\
 Привет, это бот, который присылает негатив. Введите свою кодовую фразу.
