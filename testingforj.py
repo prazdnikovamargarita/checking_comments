@@ -82,6 +82,7 @@ def menu(message):
 @bot.message_handler(regexp="Facebook")
 def facebook(message):
     chat_id = message.chat.id
+    text = message.text
     user = user_dict[chat_id] 
     print("File", user.file)
     wb = openpyxl.load_workbook(user.file)
@@ -108,6 +109,7 @@ def youtube(message):
 @bot.message_handler(regexp="На других сервисах")
 def na_drugin(message):
     chat_id = message.chat.id
+    text = message.text
     user = user_dict[chat_id] 
     
     print("File", user.file)
@@ -122,6 +124,7 @@ def na_drugin(message):
 @bot.message_handler(regexp="Вчера")
 def davnije(message):
     chat_id = message.chat.id
+    text = message.text
     user = user_dict[chat_id] 
     print("File", user.file)
     wb = openpyxl.load_workbook(user.file)
@@ -137,6 +140,7 @@ def davnije(message):
 @bot.message_handler(regexp="Сегодня")
 def vchera(message):
     chat_id = message.chat.id
+    text = message.text
     user = user_dict[chat_id] 
     print("File", user.file)
     wb = openpyxl.load_workbook(user.file)
@@ -149,6 +153,7 @@ def vchera(message):
 @bot.message_handler(regexp="Все")
 def vse(message):
     chat_id = message.chat.id
+    text = message.text
     user = user_dict[chat_id] 
     print("File", user.file)
     wb = openpyxl.load_workbook(user.file)
