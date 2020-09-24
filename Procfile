@@ -1,2 +1,2 @@
-web: python testingforj.py
+worker: python testingforj.py
 
